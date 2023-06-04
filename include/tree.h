@@ -25,7 +25,9 @@ class Tree {
     void genPerm(Node* root, std::vector<char> perm) {
       perm.push_back(root->value);
       if (root->childs.empty()) {
-        perms.push_back(perm);
+        std::vector<char> result(perm);
+        result.erase(result.begin());
+        perms.push_back(result);
       }
       for (Node* child : root->childs) {
         genPerm(child, perm);
@@ -37,10 +39,9 @@ class Tree {
     Tree(const std::vector<char>& numbers) {
       root = new Node(' ');
       createTree(numbers, root);
-      std::vector<char> p;
-      genPerm(root, p);
+      genPerm(root, {});
     }
-    int GetSize() {
+    int Size() {
       return root->childs.size();
     }
     std::vector<char> getPerm(int n) {
