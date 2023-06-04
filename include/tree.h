@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 
-class Node {
+struct Node {
   char value;
   std::vector<Node*> childs;
   explicit Node(char val) : value(val) {}
