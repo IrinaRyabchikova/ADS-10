@@ -45,7 +45,7 @@ class Tree {
     int size() const {
       return root->childs.size();
     }
-    std::vector<char> getPerm(int n) {
+    std::vector<char> getPerm(int n) const {
       return perms[n];
     }
 };
