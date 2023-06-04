@@ -11,7 +11,7 @@ int fact(int n) {
 
 std::vector<char> getPerm(const Tree& tree, int n) {
   std::vector<char> result = {};
-  if (n < 0 || fact(tree.Size()) < n)
+  if (n < 0 || fact(tree.size()) < n)
     return {};
-  return tree.GetPerm(n-1);
+  return tree.getPerm(n-1);
 }
