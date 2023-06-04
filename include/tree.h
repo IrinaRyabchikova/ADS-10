@@ -7,7 +7,7 @@
 class Node {
   char value;
   std::vector<Node*> childs;
-  Node(char val) : value(val) {}
+  explicit Node(char val) : value(val) {}
 };
 
 class Tree {
@@ -37,7 +37,7 @@ class Tree {
     }
 
  public:
-    Tree(const std::vector<char>& numbers) {
+    explicit Tree(const std::vector<char>& numbers) {
       root = new Node(' ');
       createTree(numbers, root);
       genPerm(root, {});
