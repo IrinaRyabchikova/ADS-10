@@ -4,13 +4,14 @@
 #include <vector>
 #include <algorithm>
 
+class Node {
+  char value;
+  std::vector<Node*> childs;
+  Node(char val) : value(val) {}
+};
+
 class Tree {
  private:
-    class Node {
-      char value;
-      std::vector<Node*> childs;
-      Node(char val) : value(val) {}
-    };
     std::vector<std::vector<char>> perms;
     Node* root;
     void createTree(const std::vector<char>& numbers, Node* parent) {
