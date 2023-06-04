@@ -42,7 +42,7 @@ class Tree {
       createTree(numbers, root);
       genPerm(root, {});
     }
-    int Size() {
+    int size() const {
       return root->childs.size();
     }
     std::vector<char> getPerm(int n) {
